@@ -11,11 +11,8 @@
 
 try
 {
-
 	class Hatena
 	{
-
-
 		public $feed;
 		public $obj;
 		public $result;
@@ -99,11 +96,7 @@ try
 
 					if($count){
 						$imageUrl = substr($imageSearch, 0, $jpgSearch );
-						// $imageUrl = substr($content, $count, 61);
 						$thumbnail = '<img src='. $imageUrl. '_l.jpg>'; 
-						// if(!isset($imageUrl. '_l.jpg')){
-						// 	$thumbnail = $description;
-						// }
 					} else {
 						$thumbnail = $description;
 					}
@@ -112,8 +105,6 @@ try
 					$date = date("Y/m/d H:i:s", strtotime($date));
 					$subject = $value->children('dc', true)->subject;
 					$bookmark = $value->children('hatena', true)->bookmarkcount;
-
-
 					$html .=
 					'
 					<div class=contents>
@@ -135,7 +126,6 @@ try
 
 							
 				}
-
 				
 				echo  $contents =  
 				'
@@ -146,23 +136,12 @@ try
 			}		
 			
 		}
-						public function outResult(){
-					echo $this->result;	
-				}
+		public function outResult(){
+			echo $this->result;	
+		}
 
 	}
 } catch (PDOException $e){
   echo 'エラー : ' . $e->getMessage();
 }
-?>
-
-
-
-
-
-
-
-
-
-
 
